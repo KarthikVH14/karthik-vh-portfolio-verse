@@ -1,10 +1,21 @@
-
 import React from 'react';
 import { Download, Mail, Github, Linkedin, ChevronDown } from 'lucide-react';
 
 const Hero = () => {
   const scrollToAbout = () => {
     document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  const scrollToContact = () => {
+    document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  const downloadResume = () => {
+    // Replace 'resume.pdf' with your actual resume filename
+    const link = document.createElement('a');
+    link.href = '/resume.pdf';
+    link.download = 'Karthik_VH_Resume.pdf';
+    link.click();
   };
 
   return (
@@ -30,11 +41,17 @@ const Hero = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
-            <button className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-4 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl flex items-center justify-center gap-2">
+            <button 
+              onClick={downloadResume}
+              className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-4 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl flex items-center justify-center gap-2"
+            >
               <Download size={20} />
               Download Resume
             </button>
-            <button className="border-2 border-white hover:bg-white hover:text-gray-900 text-white px-8 py-4 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 flex items-center justify-center gap-2">
+            <button 
+              onClick={scrollToContact}
+              className="border-2 border-white hover:bg-white hover:text-gray-900 text-white px-8 py-4 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 flex items-center justify-center gap-2"
+            >
               <Mail size={20} />
               Contact Me
             </button>
