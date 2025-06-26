@@ -11,9 +11,9 @@ const Hero = () => {
   };
 
   const downloadResume = () => {
-    // Replace 'resume.pdf' with your actual resume filename
+    // Updated to match your resume filename
     const link = document.createElement('a');
-    link.href = '/resume.pdf';
+    link.href = '/RenderCV_sb2nov_Theme.pdf';
     link.download = 'Karthik_VH_Resume.pdf';
     link.click();
   };
